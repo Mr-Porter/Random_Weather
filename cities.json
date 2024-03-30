@@ -1,0 +1,151 @@
+{
+  "cities": [
+    {
+      "name": "New York",
+      "country": "United States",
+      "population": 8398748,
+      "latitude": 40.7128,
+      "longitude": -74.0060
+    },
+    {
+      "name": "Los Angeles",
+      "country": "United States",
+      "population": 3990456,
+      "latitude": 34.0522,
+      "longitude": -118.2437
+    },
+    {
+      "name": "Chicago",
+      "country": "United States",
+      "population": 2705994,
+      "latitude": 41.8781,
+      "longitude": -87.6298
+    },
+    {
+      "name": "Houston",
+      "country": "United States",
+      "population": 2320268,
+      "latitude": 29.7604,
+      "longitude": -95.3698
+    },
+    {
+      "name": "Philadelphia",
+      "country": "United States",
+      "population": 1584064,
+      "latitude": 39.9526,
+      "longitude": -75.1652
+    },
+    {
+      "name": "London",
+      "country": "United Kingdom",
+      "population": 8908081,
+      "latitude": 51.5074,
+      "longitude": -0.1278
+    },
+    {
+      "name": "Tokyo",
+      "country": "Japan",
+      "population": 13929286,
+      "latitude": 35.6895,
+      "longitude": 139.6917
+    },
+    {
+      "name": "Paris",
+      "country": "France",
+      "population": 2140526,
+      "latitude": 48.8566,
+      "longitude": 2.3522
+    },
+    {
+      "name": "Berlin",
+      "country": "Germany",
+      "population": 3748148,
+      "latitude": 52.5200,
+      "longitude": 13.4050
+    },
+    {
+      "name": "Madrid",
+      "country": "Spain",
+      "population": 3266126,
+      "latitude": 40.4168,
+      "longitude": -3.7038
+    },
+    {
+      "name": "Rome",
+      "country": "Italy",
+      "population": 2870500,
+      "latitude": 41.9028,
+      "longitude": 12.4964
+    },
+    {
+      "name": "Moscow",
+      "country": "Russia",
+      "population": 12615882,
+      "latitude": 55.7558,
+      "longitude": 37.6173
+    },
+    {
+      "name": "Warsaw",
+      "country": "Poland",
+      "population": 1790658,
+      "latitude": 52.2297,
+      "longitude": 21.0122
+    },
+    {
+      "name": "Istanbul",
+      "country": "Turkey",
+      "population": 15519267,
+      "latitude": 41.0082,
+      "longitude": 28.9784
+    },
+    {
+      "name": "Cairo",
+      "country": "Egypt",
+      "population": 9734775,
+      "latitude": 30.0444,
+      "longitude": 31.2357
+    },
+    {
+      "name": "Dubai",
+      "country": "United Arab Emirates",
+      "population": 3333000,
+      "latitude": 25.2769,
+      "longitude": 55.2962
+    },
+    {
+      "name": "Beijing",
+      "country": "China",
+      "population": 21710000,
+      "latitude": 39.9042,
+      "longitude": 116.4074
+    },
+    {
+      "name": "Shanghai",
+      "country": "China",
+      "population": 24183300,
+      "latitude": 31.2304,
+      "longitude": 121.4737
+    },
+    {
+      "name": "Mumbai",
+      "country": "India",
+      "population": 20040000,
+      "latitude": 19.0760,
+      "longitude": 72.8777
+    },
+    {
+      "name": "Tokyo",
+      "country": "Japan",
+      "population": 13929286,
+      "latitude": 35.6895,
+      "longitude": 139.6917
+    },
+    {
+      "name": "Seoul",
+      "country": "South Korea",
+      "population": 9720846,
+      "latitude": 37.5665,
+      "longitude": 126.9780
+    }
+  ]
+}
