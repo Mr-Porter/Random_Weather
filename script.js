@@ -1,6 +1,6 @@
 async function fetchCitiesData() {
-  const response = await fetch('cities.json');
-  return await response.json();
+const response = await fetch('cities.json');
+return await response.json();
 }
 
 function getRandomCity() {
@@ -21,7 +21,7 @@ getRandomCity().then(randomCity => {
 
   console.log("Selected City:", cityName);
 //---------------------------------------------------------------------------------------
-  const apiUrl = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m,is_day,relative_humidity_2m,cloud_cover,surface_pressure,wind_speed_10m&models=gfs_global`;
+  const apiUrl = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m,is_day,precipitation,cloud_cover,surface_pressure,wind_speed_10m&models=gfs_global`;
   
 
   fetch(apiUrl)
@@ -36,7 +36,7 @@ getRandomCity().then(randomCity => {
       const currentTemperature = data.current.temperature_2m;
       const currentCloudCoverage = data.current.cloud_cover;
       const currentIsDay = data.current.is_day;
-      const currentHumidity = data.current.relative_humidity_2m;
+      const currentRain = data.current.precipitation;
       const currentPressure =data.current.surface_pressure;
       const currentWindSpeed =data.current.wind_speed_10m;
 
@@ -51,20 +51,21 @@ getRandomCity().then(randomCity => {
       const pressureText = document.getElementById('weather-pressure')
       const temparatureText = document.getElementById('weather-temparature')
       const cloudCoverageText = document.getElementById('weather-cloudCoverage')
-      const humidityText = document.getElementById('weather-humidity')
+      const rainText = document.getElementById('weather-rain')
       const windSpeedText = document.getElementById('weather-windSpeed')
       const weatherIcon = document.getElementById('weather-svg');
 
       locationText.textContent = `${cityName}, ${countryName}`;
       locationPopulation.textContent = `${cityPopulation}`;
       pressureText.textContent = `${currentPressure}`;
-      humidityText.textContent = `${currentHumidity}`;
+      rainText.textContent = `${currentRain}`;
       temparatureText.textContent = `${currentTemperature}`;
       cloudCoverageText.textContent = `${currentCloudCoverage}`;
       windSpeedText.textContent = `${currentWindSpeed}`;
 
       if (currentIsDay == 1) {
-      gradientColors = 'linear-gradient(0deg, rgba(42,151,199,1) 0%, rgba(144,215,245,1) 100%)';
+        if(currentRain < 0.3){
+        gradientColors = 'linear-gradient(0deg, rgba(42,151,199,1) 0%, rgba(144,215,245,1) 100%)'; //sunny
         if (currentCloudCoverage < 25) {
             weatherIcon.src = 'assets/sun.svg'
         } else if (currentCloudCoverage >= 25 && currentCloudCoverage <= 75) {
@@ -72,9 +73,17 @@ getRandomCity().then(randomCity => {
         } else {
           weatherIcon.src = 'assets/cloud.svg';
       }
-        textColor = 'white';
+      }else{
+      gradientColors = 'linear-gradient(0deg, rgba(42,151,199,1) 0%, rgba(144,215,245,1) 100%)'; //sunny rainy
+        if (currentCloudCoverage < 60) {
+            weatherIcon.src = 'assets/sunRain.svg'
+        } else {
+          weatherIcon.src = 'assets/rain.svg';
+        }
+        }
       } else {
-      gradientColors = 'linear-gradient(0deg, rgba(29,63,101,1) 0%, rgba(45,97,136,1) 100%)';
+        if(currentRain < 0.3){
+      gradientColors = 'linear-gradient(0deg, rgba(29,63,101,1) 0%, rgba(45,97,136,1) 100%)'; //night
         if (currentCloudCoverage < 25) {
             weatherIcon.src = 'assets/moon.svg'
         } else if (currentCloudCoverage >= 25 && currentCloudCoverage <= 75) {
@@ -82,9 +91,16 @@ getRandomCity().then(randomCity => {
         } else {
         weatherIcon.src = 'assets/cloud.svg';
         }
-        textColor = 'white';
+      }else{
+      gradientColors = 'linear-gradient(0deg, rgba(29,63,101,1) 0%, rgba(45,97,136,1) 100%)'; //night rainy
+        if (currentCloudCoverage < 60) {
+            weatherIcon.src = 'assets/moonRain.svg'
+        } else {
+          weatherIcon.src = 'assets/rain.svg';
+        }
+        }
       }
-      console.log(currentHumidity)
+      console.log(currentRain)
 
       document.body.style.backgroundImage = gradientColors;
 

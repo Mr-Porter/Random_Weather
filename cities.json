@@ -55,6 +55,13 @@
       "population": 2140526,
       "latitude": 48.8566,
       "longitude": 2.3522
+    },   
+    {
+      "name": "Milano",
+      "country": "Italy",
+      "population": 1399860,
+      "latitude": 45.4642,
+    "longitude": 9.1900
     },
     {
       "name": "Berlin",
