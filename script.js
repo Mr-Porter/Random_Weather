@@ -64,7 +64,7 @@ getRandomCity().then(randomCity => {
       windSpeedText.textContent = `${currentWindSpeed}`;
 
       if (currentIsDay == 1) {
-        if(currentRain < 0.3){
+        if(currentRain < 0.05){
         gradientColors = 'linear-gradient(0deg, rgba(42,151,199,1) 0%, rgba(144,215,245,1) 100%)'; //sunny
         if (currentCloudCoverage < 25) {
             weatherIcon.src = 'assets/sun.svg'
@@ -80,9 +80,9 @@ getRandomCity().then(randomCity => {
         } else {
           weatherIcon.src = 'assets/rain.svg';
         }
-        }
+      }
       } else {
-        if(currentRain < 0.3){
+        if(currentRain < 0.05){
       gradientColors = 'linear-gradient(0deg, rgba(29,63,101,1) 0%, rgba(45,97,136,1) 100%)'; //night
         if (currentCloudCoverage < 25) {
             weatherIcon.src = 'assets/moon.svg'
@@ -100,11 +100,21 @@ getRandomCity().then(randomCity => {
         }
         }
       }
-      console.log(currentRain)
 
       document.body.style.backgroundImage = gradientColors;
 
       const weatherHeader = document.querySelector('.weather-header');
       weatherHeader.style.color = textColor;
+//-------------------------------------------------------      
+      if (currentRain > -1) {
+        console.log('big penis');
+        const rain = document.getElementById('rain');
+        for(let i = 0; i < 100; i++) {
+          const drop = document.createElement('div');
+          drop.className = 'drop';
+          rain.appendChild(drop);
+        }
+      }
+//-------------------------------------------------------    
     })
 });
